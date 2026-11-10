@@ -1,0 +1,9 @@
+services:
+  aura:
+    build: .
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    environment:
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4.1-mini}
+    # For production, put this behind HTTPS and add authentication.
